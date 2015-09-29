@@ -6,6 +6,7 @@
   "dependencies": {
     "bip39": "^2.1.2",
     "browserify": "^11.0.1",
+    "create-hash": "^1.1.2",
     "create-hmac": "^1.1.4",
     "cryptojs": "^2.5.3",
     "hash-test-vectors": "^1.3.2",

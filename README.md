@@ -23,19 +23,21 @@ cordova run ios
 cordova run android
 ```
 
+## Correct SHA256 of 'synchronous write'
+```
+1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370
+HgoGu3y1OZxTicFP8YK3SINPmu28/Vu0Z+Er3eJKU3A=
+```
+
 ## Correct Signature
 Chrome / FireFox / Android >= 4.4
 ```
-GXbCcMHqF6FCEBTGRazDJmFY4fCExg5nFeyKYl/0kvk=
+72a60b59de459f00054cde9d9ce5ae00ff4ae400b0190d001971a66eafec2e00
+cqYLWd5FnwAFTN6dnOWuAP9K5ACwGQ0AGXGmbq/sLgA=
 ```
 
 ## Android 4.2
 ```
-qEOkAKvuTACzZFsAlIQjAKr4wQCs300A3z6qAiYHoAA=
+72a60b59de459f00054cde9d9ce5ae00ff4ae400b0190d001971a66eafec2e00
+cqYLWd5FnwAFTN6dnOWuAP9K5ACwGQ0AGXGmbq/sLgA=
 ```
-
-## Android 4.3
-```
-qEOkAKvuTACzZFsAlIQjAKr4wQCs300A3z6qAiYHoAA=
-```
-
