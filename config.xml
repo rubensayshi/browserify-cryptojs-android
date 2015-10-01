@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.benchmark.pbkdf2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HmacAndroid42</name>
+<widget id="org.debug.browserify-cryptojs-android" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Browserify CryptoJS Android</name>
     <description>
         BOOOOOOOOOOOOOOOOM
     </description>

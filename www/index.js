@@ -1,11 +1,13 @@
-/* // sha256 seems fine
+///* // sha256 using createHash
+console.log(' == createHash == ');
 var createHash = require('create-hash');
 var hash = createHash('sha256');
 hash.update('synchronous write'); //optional encoding parameter
 
 var digest = hash.digest();
 
-console.log(digest);
+console.log(digest.toString('hex') == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+
 console.log(digest.toString('hex'));
 // alert(digest.toString('hex'));
 
@@ -13,21 +15,18 @@ console.log(digest.toString('base64'));
 // alert(digest.toString('base64'));
 //*/
 
-///* // hmac?
-var createHmac = require('create-hash');
+///* // sha256 using CryptoJS
+console.log(' == CryptoJS == ');
+var CryptoJS = require('crypto-js');
 
-var key = "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b";
-var data = "4869205468657265";
+var digest = CryptoJS.SHA256('synchronous write');
 
-var hmac = createHmac("sha256", key);
-hmac.update(data);
+console.log(digest.toString() == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+// alert(digest.toString() == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
 
-var digest = hmac.digest();
+console.log(digest.toString());
+// alert(digest.toString());
 
-console.log(digest);
-console.log(digest.toString('hex'));
-// alert(digest.toString('hex'));
-
-console.log(digest.toString('base64'));
-// alert(digest.toString('base64'));
+console.log((new Buffer(digest.toString(), 'hex')).toString('base64'));
+// alert((new Buffer(digest.toString(), 'hex')).toString('base64'));
 //*/

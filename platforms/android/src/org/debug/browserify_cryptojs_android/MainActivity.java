@@ -17,7 +17,7 @@
        under the License.
  */
 
-package org.benchmark.pbkdf2;
+package org.debug.browserify_cryptojs_android;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

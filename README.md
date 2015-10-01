@@ -1,11 +1,14 @@
 # Build
 ```
-npm install -g cordova;
+npm install -g cordova grunt;
 npm install;
 
-# cd node_modules/sjcl && ./configure --with-sha512 --with-hmac --with-pbkdf2 --with-bitArray && make && cd ../..;
+grunt;
+```
 
-browserify www/index.js -o www/build.js;
+# Develop
+```
+grunt watch
 ```
 
 # Run in Browser
@@ -29,15 +32,8 @@ cordova run android
 HgoGu3y1OZxTicFP8YK3SINPmu28/Vu0Z+Er3eJKU3A=
 ```
 
-## Correct Signature
-Chrome / FireFox / Android >= 4.4
+## Android 4.2 with createHash
 ```
-72a60b59de459f00054cde9d9ce5ae00ff4ae400b0190d001971a66eafec2e00
-cqYLWd5FnwAFTN6dnOWuAP9K5ACwGQ0AGXGmbq/sLgA=
-```
-
-## Android 4.2
-```
-72a60b59de459f00054cde9d9ce5ae00ff4ae400b0190d001971a66eafec2e00
-cqYLWd5FnwAFTN6dnOWuAP9K5ACwGQ0AGXGmbq/sLgA=
+1e0a06bb7cb5399c5389c14ff182b700834f9a00bcfd5b0067e12bdde24a5300
+HgoGu3y1OZxTicFP8YK3AINPmgC8/VsAZ+Er3eJKUwA=
 ```
