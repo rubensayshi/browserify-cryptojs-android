@@ -7,7 +7,7 @@ var message = 'synchronous write';
 true && (function() {
     console.log(' == createHash == ');
     var hash = createHash('sha256');
-    hash.update(message); //optional encoding parameter
+    hash.update(message, 'utf8', 'utf8');
 
     var digest = hash.digest();
 
@@ -19,6 +19,24 @@ true && (function() {
 
     console.log(digest.toString('base64'));
     // alert(digest.toString('base64'));
+})();
+
+// sha256 using createHash, directly from digest
+true && (function() {
+    console.log(' == createHash == ');
+    var hash = createHash('sha256');
+    hash.update(message, 'utf8', 'utf8');
+
+    var digest = hash.digest('hex');
+
+    console.log(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+    // alert(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+
+    console.log(digest);
+    // alert(digest);
+
+    console.log((new Buffer(digest, 'hex').toString('base64')));
+    // alert((new Buffer(digest, 'hex').toString('base64')));
 })();
 
 // sha256 using CryptoJS
@@ -33,5 +51,5 @@ true && (function() {
     // alert(digest.toString());
 
     console.log((new Buffer(digest.toString(), 'hex')).toString('base64'));
-// alert((new Buffer(digest.toString(), 'hex')).toString('base64'));
+    // alert((new Buffer(digest.toString(), 'hex')).toString('base64'));
 })();
