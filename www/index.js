@@ -2,6 +2,41 @@ var createHash = require('create-hash');
 var CryptoJS = require('crypto-js');
 
 var message = 'synchronous write';
+var messageHex = "73796e6368726f6e6f7573207772697465";
+
+console.log(message, (new Buffer(message, 'utf8')).toString('hex'));
+
+// crypto
+true && (function() {
+    console.log(' == crypto == ');
+
+    var digest = require('crypto').createHash('sha256').update(message, 'utf8').digest('hex');
+
+    console.log(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+    // alert(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+
+    console.log(digest.toString('hex'));
+    // alert(digest.toString('hex'));
+
+    console.log(digest.toString('base64'));
+    // alert(digest.toString('base64'));
+})();
+
+// crypto from buffer (from hex)
+true && (function() {
+    console.log(' == crypto from buffer == ');
+
+    var digest = require('crypto').createHash('sha256').update(new Buffer(messageHex, 'hex')).digest('hex');
+
+    console.log(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+    // alert(digest == "1e0a06bb7cb5399c5389c14ff182b748834f9aedbcfd5bb467e12bdde24a5370");
+
+    console.log(digest.toString('hex'));
+    // alert(digest.toString('hex'));
+
+    console.log(digest.toString('base64'));
+    // alert(digest.toString('base64'));
+})();
 
 // sha256 using createHash
 true && (function() {
@@ -17,8 +52,8 @@ true && (function() {
     console.log(digest.toString('hex'));
     // alert(digest.toString('hex'));
 
-    console.log(digest.toString('base64'));
-    // alert(digest.toString('base64'));
+    console.log((new Buffer(digest, 'hex').toString('base64')));
+    // alert((new Buffer(digest, 'hex').toString('base64')));
 })();
 
 // sha256 using createHash, directly from digest
